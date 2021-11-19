@@ -13,6 +13,9 @@ fixture('WebVitalEvent Plugin').page(
     'http://localhost:8080/web_vital_event.html'
 );
 
+const browserAgent = window.navigator.userAgent.toLowerCase();
+if (browserAgent.indexOf('safari') < 0 && browserAgent.indexOf('firefox') < 0) {
+
 // According to https://github.com/GoogleChrome/web-vitals, "FID is not reported if the user never interacts with the page."
 // It doesn't seem like TestCafe actions are registered as user interactions, so cannot test FID
 
@@ -66,3 +69,4 @@ test('WebVitalEvent records lcp and cls events', async (t: TestController) => {
         .expect(eventDetails2.value)
         .typeOf('number');
 });
+}
