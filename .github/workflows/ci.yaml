@@ -2,9 +2,9 @@ name: AWS RUM Web Client Continuous Build
 
 on:
     push:
-        branches: [main]
+        branches: [dinesh-add-workflow]
     pull_request:
-        branches: [main]
+        branches: [dinesh-add-workflow]
 
 jobs:
     unit-test:
