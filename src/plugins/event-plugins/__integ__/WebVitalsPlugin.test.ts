@@ -13,8 +13,6 @@ fixture('WebVitalEvent Plugin').page(
     'http://localhost:8080/web_vital_event.html'
 );
 
-const browserAgent = navigator.userAgent.toLowerCase();
-if (browserAgent.indexOf('safari') < 0 && browserAgent.indexOf('firefox') < 0) {
     // According to https://github.com/GoogleChrome/web-vitals, "FID is not reported if the user never interacts with the page."
     // It doesn't seem like TestCafe actions are registered as user interactions, so cannot test FID
 
@@ -39,6 +37,7 @@ if (browserAgent.indexOf('safari') < 0 && browserAgent.indexOf('firefox') < 0) {
     test('WebVitalEvent records lcp and cls events', async (t: TestController) => {
         // If we click too soon, the client/event collector plugin will not be loaded and will not record the click.
         // This could be a symptom of an issue with RUM web client load speed, or prioritization of script execution.
+        if(browser != 'safari' && browser != 'firefox'){
         await t.wait(300);
 
         await t
@@ -68,4 +67,4 @@ if (browserAgent.indexOf('safari') < 0 && browserAgent.indexOf('firefox') < 0) {
             .expect(eventDetails2.value)
             .typeOf('number');
     });
-}
+    }
