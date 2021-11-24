@@ -73,7 +73,5 @@ jobs:
 
             - name: Run IE Integ Tests
               if: matrix.os == 'windows-latest'
-              run: |
-               npm run integ:local:firefox
-               npm run integ:local:ie
-               npm run integ:local:edge
+              run: npm run integ:local:firefox
+               
