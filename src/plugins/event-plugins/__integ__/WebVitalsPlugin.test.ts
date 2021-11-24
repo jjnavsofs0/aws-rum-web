@@ -39,7 +39,7 @@ fixture('WebVitalEvent Plugin').page(
         // This could be a symptom of an issue with RUM web client load speed, or prioritization of script execution.
         let browser = t.browser.name;
         console.log(browser)
-        if (browser != 'Firefox') {
+        if (browser != 'safari' && browser != 'Firefox') {
         await t.wait(300);
 
         await t
