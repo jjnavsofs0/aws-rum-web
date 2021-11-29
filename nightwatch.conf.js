@@ -3,17 +3,6 @@
 const Services = {};
 loadServices();
 
-const gecko = require("geckodriver");
-const selenium = require("selenium-server");
-const chrome = require("chromedriver");
-module.exports = (function (settings) {
-  // console.log('Firefox Path:\r\n', gecko.path);
-  settings.test_workers = false;
-  settings.test_settings.chrome.webdriver.server_path = chrome.path;
-  settings.test_settings.firefox.webdriver.server_path = gecko.path;
-  return settings;
-})(require("./nightwatch.json"));
-
 module.exports = {
     // An array of folders (excluding subfolders) where your tests are located;
     // if this is not specified, the test source must be passed as the second argument to the test runner.
