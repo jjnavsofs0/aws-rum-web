@@ -69,7 +69,10 @@ jobs:
             - run: npm install
 
             - name: Run Integ Tests
-              run: npm run integ:local:${{ matrix.browser }}:headless
+              run: |
+               npm run integ:local:${{ matrix.browser }}:headless
+               npm run integ:local:nightwatch:chrome
+              
 
             - name: Run IE,Edge,Firefox Integ Tests
               if: matrix.os == 'windows-latest'
@@ -77,6 +80,5 @@ jobs:
                npm run integ:local:firefox
                npm run integ:local:ie
                npm run integ:local:edge
-               npm run integ:local:nightwatch:chrome
                
                
