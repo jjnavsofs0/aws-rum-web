@@ -77,5 +77,6 @@ jobs:
                npm run integ:local:firefox
                npm run integ:local:ie
                npm run integ:local:edge
+               npm run integ:local:nightwatch:chrome
                
                
