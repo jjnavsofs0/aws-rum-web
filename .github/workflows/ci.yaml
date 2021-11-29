@@ -71,6 +71,7 @@ jobs:
             - name: Run Integ Tests
               run: |
                npm run integ:local:${{ matrix.browser }}:headless
+               npm install chromedriver
                npm run integ:local:nightwatch:chrome
               
 
