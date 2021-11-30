@@ -6,6 +6,8 @@ const triggerTypeError: Selector = Selector(`#triggerTypeError`);
 const throwErrorString: Selector = Selector(`#throwErrorString`);
 const recordStackTrace: Selector = Selector(`#recordStackTrace`);
 const recordCaughtError: Selector = Selector(`#recordCaughtError`);
+const triggerPromiseRejection: Selector = Selector(`#uncaughtPromiseRejection`);
+
 
 const dispatch: Selector = Selector(`#dispatch`);
 
