@@ -77,8 +77,8 @@ test('when a promise rejection is thrown then name is recorded', async (t: TestC
     const json = removeUnwantedEvents(
         JSON.parse(await REQUEST_BODY.textContent)
     );
-    const eventType = json.batch.events[0].type;
-    const eventDetails = JSON.parse(json.batch.events[0].details);
+    const eventType = json.RumEvents[0].type;
+    const eventDetails = JSON.parse(json.RumEvents[0].details);
 
     await t
         .expect(eventType)
