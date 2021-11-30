@@ -67,14 +67,18 @@ jobs:
 
             - run: npm install
 
-            - name: Run Chrome,firefox Integ Tests
+            - name: Run Chrome,firefox Integ Tests on ubuntu-latest
               if: matrix.os == 'ubuntu-latest'
               run: |
                npm run integ:local:chrome:headless
                npm run integ:local:firefox:headless
                
-            - name: Run IE,Edge Integ Tests
+            - name: Run IE,Edge,Firefox,Chrome Integ Tests on windows-latest 
               if: matrix.os == 'windows-latest'
               run: |
                npm run integ:local:ie
                npm run integ:local:edge
+               npm run integ:local:chrome
+               npm run integ:local:firefox
+               
+               
