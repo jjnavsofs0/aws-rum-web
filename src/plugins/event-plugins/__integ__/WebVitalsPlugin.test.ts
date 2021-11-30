@@ -40,6 +40,8 @@ fixture('WebVitalEvent Plugin').page(
         let browser = t.browser.name;
         console.log(browser)
         if (browser != 'safari' && browser != 'Firefox') {
+            return("Tests is skipped as browser is +$browser+"); 
+        }
         await t.wait(300);
 
         await t
@@ -68,5 +70,4 @@ fixture('WebVitalEvent Plugin').page(
             .eql(CLS_EVENT_TYPE)
             .expect(eventDetails2.value)
             .typeOf('number');
-        }
     });
