@@ -40,14 +40,13 @@ jobs:
               run: npm run test
 
     integ-test:
-        name: Run Integ Tests on ${{ matrix.os }} ${{ matrix.browser }}
+        name: Run Integ Tests on ${{ matrix.os }}
         runs-on: ${{ matrix.os }}
         permissions: read-all
         strategy:
             fail-fast: false
             matrix:
                 os: [ubuntu-latest, windows-latest]
-                browser: [chrome]
 
         steps:
             - name: Checkout AWS RUM Web Client Repository
@@ -68,18 +67,13 @@ jobs:
 
             - run: npm install
 
-            - name: Run Integ Tests
+            - name: Run Chrome,firefox Integ Tests
               run: |
-               npm run integ:local:${{ matrix.browser }}:headless
-               npm install chromedriver
-               npm run integ:local:nightwatch:chrome
-              
-
-            - name: Run IE,Edge,Firefox Integ Tests
+               npm run integ:local:chrome
+               npm run integ:local:firefox
+               
+            - name: Run IE,Edge Integ Tests
               if: matrix.os == 'windows-latest'
               run: |
-               npm run integ:local:firefox
                npm run integ:local:ie
                npm run integ:local:edge
-               
-               
