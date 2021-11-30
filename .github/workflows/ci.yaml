@@ -69,7 +69,7 @@ jobs:
 
             - name: Run Chrome,firefox Integ Tests
               run: |
-               npm run integ:local:chrome
+               npm run integ:local:chrome:headless
                npm run integ:local:firefox
                
             - name: Run IE,Edge Integ Tests
