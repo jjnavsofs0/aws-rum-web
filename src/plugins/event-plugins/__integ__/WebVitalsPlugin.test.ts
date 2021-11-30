@@ -39,8 +39,8 @@ fixture('WebVitalEvent Plugin').page(
         // This could be a symptom of an issue with RUM web client load speed, or prioritization of script execution.
         let browser = t.browser.name;
         console.log(browser)
-        if (browser != 'safari' && browser != 'Firefox') {
-            return("Tests is skipped as browser is +$browser+"); 
+        if (browser == 'Safari' && browser == 'Firefox') {
+            return "Test is skipped"; 
         }
         await t.wait(300);
 
