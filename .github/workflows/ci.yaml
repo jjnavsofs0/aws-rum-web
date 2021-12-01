@@ -66,6 +66,7 @@ jobs:
                       ${{ runner.os }}-node-
 
             - run: npm install
+            - run: npm install chromedriver
 
             - name: Run Chrome,firefox Integ Tests on ubuntu-latest
               if: matrix.os == 'ubuntu-latest'
