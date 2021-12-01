@@ -86,6 +86,8 @@ jobs:
             - name: Run nightwatch tests
               run: |
                npm run integ:local:nightwatch:firefox
+                npm run integ:local:nightwatch:chrome
+               
                
                
                
