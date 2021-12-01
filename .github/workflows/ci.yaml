@@ -82,7 +82,6 @@ jobs:
                npm run integ:local:firefox
            
             - name: Run nightwatch tests
-              if: matrix.os == 'windows-latest'
               run: npm run integ:local:nightwatch:chrome
                
                
