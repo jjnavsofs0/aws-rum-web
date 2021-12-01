@@ -67,6 +67,7 @@ jobs:
 
             - run: npm install
             - run: npm install chromedriver
+            - run: npm install geckodriver
 
             - name: Run Chrome,firefox Integ Tests on ubuntu-latest
               if: matrix.os == 'ubuntu-latest'
@@ -83,6 +84,9 @@ jobs:
                npm run integ:local:firefox
            
             - name: Run nightwatch tests
-              run: npm run integ:local:nightwatch:chrome
+              run: |
+               npm run integ:local:nightwatch:chrome
+               npm run integ:local:nightwatch:firefox
+               
                
                
