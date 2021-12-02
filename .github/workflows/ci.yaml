@@ -67,7 +67,6 @@ jobs:
 
             - run: npm install
             - run: npm install chromedriver
-            - run: npm install geckodriver
 
             - name: Run Chrome,firefox Integ Tests on ubuntu-latest
               if: matrix.os == 'ubuntu-latest'
