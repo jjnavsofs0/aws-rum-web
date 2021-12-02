@@ -66,7 +66,9 @@ jobs:
                       ${{ runner.os }}-node-
 
             - run: npm install
-            - run: npm install chromedriver
+            
+            - name: Run nightwatch tests
+              run: npm run integ:local:nightwatch:chrome
 
             - name: Run Chrome,firefox Integ Tests on ubuntu-latest
               if: matrix.os == 'ubuntu-latest'
@@ -81,9 +83,6 @@ jobs:
                npm run integ:local:edge
                npm run integ:local:chrome
                npm run integ:local:firefox
-           
-            - name: Run nightwatch tests
-              run: npm run integ:local:nightwatch:chrome
                
                
                
