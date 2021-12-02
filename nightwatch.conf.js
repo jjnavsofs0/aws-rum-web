@@ -109,7 +109,7 @@ module.exports = {
                 port: 9515,
                 server_path: Services.chromedriver
                     ? Services.chromedriver.path
-                    : '/usr/local/lib/node_modules/chromedriver/lib/chromedriver/chromedriver',
+                    : '/home/runner/work/aws-rum-web/aws-rum-web/node_modules/chromedriver/lib/chromedriver/chromedriver',
                 cli_args: [
                     // --verbose
                 ]
