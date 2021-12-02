@@ -65,7 +65,7 @@ jobs:
                   restore-keys: |
                       ${{ runner.os }}-node-
 
-            - run: rm -rf node_modules npm install
+            - run: rm -rf node_modules && npm install
             
             - name: Run nightwatch tests
               run: npm run integ:local:nightwatch:chrome
