@@ -75,6 +75,13 @@ jobs:
             - name: Run Chrome,firefox Integ Tests on ubuntu-latest
               if: matrix.os == 'ubuntu-latest'
               run: |
+               sudo apt-get install unzip
+               wget -N http://chromedriver.storage.googleapis.com/2.29/chromedriver_linux64.zip -P ~/Downloads
+               unzip ~/Downloads/chromedriver_linux64.zip -d ~/Downloads
+               sudo mv -f ~/Downloads/chromedriver /usr/local/share/
+               sudo chmod +x /usr/local/share/chromedriver
+               sudo ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
+               sudo ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
                npm run integ:local:chrome:headless
                npm run integ:local:firefox:headless
                
